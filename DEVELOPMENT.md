@@ -19,6 +19,11 @@ Patches adhere to a specific structure:
 
 Upstream patches are included via Git submodule for reference and to utilize shared extension code. They are not modified within this project.
 
+-   **Piko patches (Instagram):** [app/src/main/java/io/github/nexalloy/piko](app/src/main/java/io/github/nexalloy/piko)
+
+Ported from the bytecode patches of [Piko](https://github.com/crimera/piko) to hooks.
+Settings that Piko injects into the app are NexAlloy patch toggles instead.
+
 -   **2eno patches (Spotify, Kleinanzeigen, Untappd, InterPals):** [app/src/main/java/io/github/nexalloy/twoeno](app/src/main/java/io/github/nexalloy/twoeno)
 
 Their extension code lives in the [2eno-patches](https://github.com/2eno/2eno-patches) submodule (`2eno-patches/extensions/twoeno`),

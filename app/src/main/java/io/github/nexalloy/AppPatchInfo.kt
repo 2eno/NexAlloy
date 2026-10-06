@@ -4,6 +4,7 @@ import io.github.nexalloy.hoodles.morphe.alltrails.AllTrailsPatches
 import io.github.nexalloy.morphe.music.YTMusicPatches
 import io.github.nexalloy.morphe.reddit.RedditPatches
 import io.github.nexalloy.morphe.youtube.YouTubePatches
+import io.github.nexalloy.piko.instagram.InstagramPatches
 import io.github.nexalloy.revanced.googlephotos.GooglePhotosPatches
 import io.github.nexalloy.revanced.meta.MetaPatches
 import io.github.nexalloy.revanced.photomath.PhotomathPatches
@@ -21,7 +22,7 @@ val appPatchConfigurations = listOf(
     AppPatchInfo("Reddit", "com.reddit.frontpage", RedditPatches),
     AppPatchInfo("Google Photos", "com.google.android.apps.photos", GooglePhotosPatches),
     AppPatchInfo("Photomath", "com.microblink.photomath", PhotomathPatches),
-    AppPatchInfo("Instagram", "com.instagram.android", MetaPatches),
+    AppPatchInfo("Instagram", "com.instagram.android", InstagramPatches),
     AppPatchInfo("Threads", "com.instagram.barcelona", MetaPatches),
     AppPatchInfo("Strava", "com.strava", StravaPatches),
     AppPatchInfo("AllTrails", "com.alltrails.alltrails", AllTrailsPatches),

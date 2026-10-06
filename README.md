@@ -69,6 +69,36 @@
 
 ### Instagram
 - Hide ads
+- Hide suggested content
+- Unlock Plus benefits
+- Disable analytics
+- Disable stories
+- Disable highlights
+- Disable explore
+- Disable comments
+- Disable discover people
+- View stories anonymously
+- View live anonymously
+- View DMs anonymously
+- Disable typing status
+- Disable screenshot detection
+- Sanitize share links
+- Open links externally
+- Hide reshare button
+- Hide Reels, Create, Search and Direct buttons
+- Hide notes tray
+- Disable double tap like
+- Disable Reels scrolling
+- Disable story flipping
+- Disable video autoplay
+- Stories audio autoplay
+- Disable onboarding permission prompts
+- Remove build expired popup
+- Limit feed to following profiles
+- Improve image viewing
+- Unlock developer options
+
+<sub>The Instagram patches are ported from [Piko](https://github.com/crimera/piko), see its [NOTICE](app/src/main/java/io/github/nexalloy/piko/NOTICE).</sub>
 
 ### Threads
 - Hide ads
@@ -118,4 +148,5 @@ or [Create an issue](https://github.com/NexAlloy/NexAlloy/issues/new/choose)
 
 [DexKit](https://luckypray.org/DexKit/en/): a high-performance dex runtime parsing library.  
 [Morphe](https://morphe.software): Transform Your Android Apps  
-[ReVanced](https://revanced.app): Continuing the legacy of Vanced at [revanced.app](https://revanced.app)
+[ReVanced](https://revanced.app): Continuing the legacy of Vanced at [revanced.app](https://revanced.app)  
+[Piko](https://github.com/crimera/piko): Instagram and X patches
