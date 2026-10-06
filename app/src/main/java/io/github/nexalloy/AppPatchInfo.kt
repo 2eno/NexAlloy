@@ -4,6 +4,10 @@ import io.github.nexalloy.hoodles.morphe.alltrails.AllTrailsPatches
 import io.github.nexalloy.morphe.music.YTMusicPatches
 import io.github.nexalloy.morphe.reddit.RedditPatches
 import io.github.nexalloy.morphe.youtube.YouTubePatches
+import io.github.nexalloy.quiet.interpals.InterPalsPatches
+import io.github.nexalloy.quiet.kleinanzeigen.KleinanzeigenPatches
+import io.github.nexalloy.quiet.spotify.SpotifyPatches
+import io.github.nexalloy.quiet.untappd.UntappdPatches
 import io.github.nexalloy.revanced.googlephotos.GooglePhotosPatches
 import io.github.nexalloy.revanced.meta.MetaPatches
 import io.github.nexalloy.revanced.photomath.PhotomathPatches
@@ -21,6 +25,10 @@ val appPatchConfigurations = listOf(
     AppPatchInfo("Threads", "com.instagram.barcelona", MetaPatches),
     AppPatchInfo("Strava", "com.strava", StravaPatches),
     AppPatchInfo("AllTrails", "com.alltrails.alltrails", AllTrailsPatches),
+    AppPatchInfo("Spotify", "com.spotify.music", SpotifyPatches),
+    AppPatchInfo("Kleinanzeigen", "com.ebay.kleinanzeigen", KleinanzeigenPatches),
+    AppPatchInfo("Untappd", "com.untappdllc.app", UntappdPatches),
+    AppPatchInfo("InterPals", "net.interpals", InterPalsPatches),
 )
 
 val patchesByPackage = appPatchConfigurations.associate { it.packageName to it.patches }

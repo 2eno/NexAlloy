@@ -3,6 +3,7 @@ name: Android CI
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,6 +29,10 @@ jobs:
 
     - name: Write key
       run: |
+        if [ -z "${{ secrets.KEYSTORE }}" ]; then
+          echo "::error::Signing secrets are missing. Add KEYSTORE (base64), KEYSTORE_PASSWORD, KEYSTORE_ALIAS and KEYSTORE_ALIAS_PASSWORD in Settings > Secrets and variables > Actions."
+          exit 1
+        fi
         echo KEYSTORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }} > signing.properties
         echo KEYSTORE_ALIAS=${{ secrets.KEYSTORE_ALIAS }} >> signing.properties
         echo KEYSTORE_ALIAS_PASSWORD='${{ secrets.KEYSTORE_ALIAS_PASSWORD }}' >> signing.properties

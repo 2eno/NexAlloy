@@ -63,6 +63,9 @@ class MainHook : XposedModule() {
             param.classLoader.loadClass("app.revanced.integrations.shared.Utils")
         }.isSuccess || runCatching {
             param.classLoader.loadClass("app.revanced.integrations.shared.utils.Utils")
+        }.isSuccess || runCatching {
+            // Patched with Quiet Patches.
+            param.classLoader.loadClass("app.quiet.extension.shared.Logger")
         }.isSuccess
     }
 

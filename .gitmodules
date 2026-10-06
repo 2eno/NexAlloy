@@ -6,3 +6,7 @@
 	path = morphe-patches-library
 	url = https://github.com/NexAlloy/morphe-patches-library
 	branch = nexalloy
+[submodule "quiet-patches"]
+	path = quiet-patches
+	url = https://github.com/2eno/quiet-patches
+	branch = main

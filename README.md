@@ -80,6 +80,35 @@
 ### AllTrails
 - Enable Peak membership
 
+### Spotify
+- Mute audio ads
+- Hide ad sections
+- Hide ad views
+- Hide context menu upsells
+- Block popup ads
+- Hide playlist ads
+- Hide video ads
+- Hide Premium tab
+- Fix third party launchers widgets
+- Sanitize sharing links
+- Material You theme
+- Rounded corners
+
+### Kleinanzeigen
+- Hide ads
+- Hide Pur
+- Sanitize sharing links
+
+### Untappd
+- Hide ads
+- Hide feed ads
+- Hide sponsored content
+
+### InterPals
+- Hide ads
+
+<sub>Spotify, Kleinanzeigen, Untappd and InterPals patches share their extension code with [Quiet Patches](https://github.com/2eno/quiet-patches), which are also available as a Morphe patch source.</sub>
+
 ## Supports
 [![Discord Server](https://img.shields.io/badge/Join-Discord-5865F2.svg?logo=discord)](https://discord.gg/QWUrAA2mKq)  
 [![FAQ](https://img.shields.io/badge/Read-FAQ-orange.svg?logo=github)](https://github.com/NexAlloy/NexAlloy/wiki/Frequently-Asked-Questions)  
