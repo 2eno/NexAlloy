@@ -100,7 +100,7 @@ android {
                 "../morphe-patches/extensions/music/src/main/java",
                 "../morphe-patches/extensions/reddit/src/main/java",
                 "../morphe-patches-library/extension-library/src/main/java",
-                "../quiet-patches/extensions/quiet/src/main/java",
+                "../2eno-patches/extensions/twoeno/src/main/java",
             )
             java.directories += srcDirs
             kotlin.directories += srcDirs

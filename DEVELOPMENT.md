@@ -19,9 +19,9 @@ Patches adhere to a specific structure:
 
 Upstream patches are included via Git submodule for reference and to utilize shared extension code. They are not modified within this project.
 
--   **Quiet patches (Spotify, Kleinanzeigen, Untappd, InterPals):** [app/src/main/java/io/github/nexalloy/quiet](app/src/main/java/io/github/nexalloy/quiet)
+-   **2eno patches (Spotify, Kleinanzeigen, Untappd, InterPals):** [app/src/main/java/io/github/nexalloy/twoeno](app/src/main/java/io/github/nexalloy/twoeno)
 
-Their extension code lives in the [quiet-patches](https://github.com/2eno/quiet-patches) submodule (`quiet-patches/extensions/quiet`),
+Their extension code lives in the [2eno-patches](https://github.com/2eno/2eno-patches) submodule (`2eno-patches/extensions/twoeno`),
 which is also published as a Morphe patch source. Fix shared logic there, so both the Morphe patches and the Xposed hooks get it.
 Dependabot bumps the submodule to the latest commit of its `main` branch, i.e. the latest stable release of the patches.
 

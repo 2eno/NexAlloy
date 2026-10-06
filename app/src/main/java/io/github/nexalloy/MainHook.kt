@@ -64,8 +64,8 @@ class MainHook : XposedModule() {
         }.isSuccess || runCatching {
             param.classLoader.loadClass("app.revanced.integrations.shared.utils.Utils")
         }.isSuccess || runCatching {
-            // Patched with Quiet Patches.
-            param.classLoader.loadClass("app.quiet.extension.shared.Logger")
+            // Patched with 2eno Patches.
+            param.classLoader.loadClass("app.twoeno.extension.shared.Logger")
         }.isSuccess
     }
 

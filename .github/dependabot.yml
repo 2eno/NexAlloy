@@ -5,10 +5,10 @@ updates:
     schedule:
       interval: "weekly"
 
-  # Picks up new releases of the Quiet patches, whose extension code is compiled into the module.
+  # Picks up new releases of the 2eno patches, whose extension code is compiled into the module.
   - package-ecosystem: "gitsubmodule"
     directory: "/"
     allow:
-      - dependency-name: "quiet-patches"
+      - dependency-name: "2eno-patches"
     schedule:
       interval: "daily"

@@ -107,7 +107,7 @@
 ### InterPals
 - Hide ads
 
-<sub>Spotify, Kleinanzeigen, Untappd and InterPals patches share their extension code with [Quiet Patches](https://github.com/2eno/quiet-patches), which are also available as a Morphe patch source.</sub>
+<sub>Spotify, Kleinanzeigen, Untappd and InterPals patches share their extension code with [2eno Patches](https://github.com/2eno/2eno-patches), which are also available as a Morphe patch source.</sub>
 
 ## Supports
 [![Discord Server](https://img.shields.io/badge/Join-Discord-5865F2.svg?logo=discord)](https://discord.gg/QWUrAA2mKq)  

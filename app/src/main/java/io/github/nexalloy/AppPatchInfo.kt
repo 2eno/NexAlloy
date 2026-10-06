@@ -4,14 +4,14 @@ import io.github.nexalloy.hoodles.morphe.alltrails.AllTrailsPatches
 import io.github.nexalloy.morphe.music.YTMusicPatches
 import io.github.nexalloy.morphe.reddit.RedditPatches
 import io.github.nexalloy.morphe.youtube.YouTubePatches
-import io.github.nexalloy.quiet.interpals.InterPalsPatches
-import io.github.nexalloy.quiet.kleinanzeigen.KleinanzeigenPatches
-import io.github.nexalloy.quiet.spotify.SpotifyPatches
-import io.github.nexalloy.quiet.untappd.UntappdPatches
 import io.github.nexalloy.revanced.googlephotos.GooglePhotosPatches
 import io.github.nexalloy.revanced.meta.MetaPatches
 import io.github.nexalloy.revanced.photomath.PhotomathPatches
 import io.github.nexalloy.revanced.strava.StravaPatches
+import io.github.nexalloy.twoeno.interpals.InterPalsPatches
+import io.github.nexalloy.twoeno.kleinanzeigen.KleinanzeigenPatches
+import io.github.nexalloy.twoeno.spotify.SpotifyPatches
+import io.github.nexalloy.twoeno.untappd.UntappdPatches
 
 class AppPatchInfo(val appName: String, val packageName: String, val patches: Array<Patch>)
 

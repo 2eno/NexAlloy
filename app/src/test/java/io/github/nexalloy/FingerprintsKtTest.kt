@@ -219,7 +219,7 @@ class FingerprintsKtTest(val apkPath: Path) {
             apkPath.name.startsWith("com.ebay.kleinanzeigen") -> "kleinanzeigen"
             else -> return@sequence
         }
-        val patchesPackage = if (app == "spotify" || app == "kleinanzeigen") "quiet" else "morphe"
+        val patchesPackage = if (app == "spotify" || app == "kleinanzeigen") "twoeno" else "morphe"
 
         fun findFingerprintPackages(rootPackage:String): MutableList<String> =
             Files.walk(Path(rootPackage))
