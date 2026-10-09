@@ -1,6 +1,8 @@
 package io.github.nexalloy.twoeno.spotify.misc
 
+import app.morphe.extension.shared.Logger
 import de.robv.android.xposed.XC_MethodReplacement
+import io.github.nexalloy.hookMethod
 import io.github.nexalloy.patch
 import io.github.nexalloy.twoeno.spotify.canBindAppWidgetPermissionMethod
 
@@ -9,5 +11,11 @@ val FixThirdPartyLaunchersWidgets = patch(
     description = "Allows the Spotify widgets to be added to third party launchers.",
 ) {
     // Only the stock launcher has the BIND_APPWIDGET permission Spotify checks for.
-    ::canBindAppWidgetPermissionMethod.hookMethod(XC_MethodReplacement.returnConstant(true))
+    val method = ::canBindAppWidgetPermissionMethod.memberOrNull
+    if (method == null) {
+        // Do not report this optional fix as failed.
+        Logger.printInfo { "The BIND_APPWIDGET permission check was not found, skipping the widget fix" }
+        return@patch
+    }
+    method.hookMethod(XC_MethodReplacement.returnConstant(true))
 }

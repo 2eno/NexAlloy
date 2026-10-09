@@ -125,13 +125,14 @@ val navigationTabSetConstructor = findMethodDirect {
 val canBindAppWidgetPermissionMethod = findMethodDirect {
     runCatching {
         fingerprint {
+            returns("Z")
             strings("android.permission.BIND_APPWIDGET")
             opcodes(Opcode.AND_INT_LIT8)
         }
     }.getOrElse {
+        // Newer versions no longer check the system app flag in the same method.
         fingerprint {
             returns("Z")
-            parameters("Landroid/content/Context;")
             strings("android.permission.BIND_APPWIDGET")
         }
     }
