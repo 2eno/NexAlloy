@@ -1,0 +1,31 @@
+name: Keygen app
+
+on:
+  push:
+    paths: [ "keygen/**", ".github/workflows/keygen.yml" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: set up JDK
+      uses: actions/setup-java@v5
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Test and build
+      run: |
+        chmod +x gradlew
+        ./gradlew -p keygen testDebugUnitTest assembleDebug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v7
+      with:
+        name: nexalloy-keygen-apk
+        path: keygen/build/outputs/apk/debug/*.apk
