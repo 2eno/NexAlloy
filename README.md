@@ -136,6 +136,9 @@
 
 ### InterPals
 - Hide ads
+- Disable ad placements
+- Download photos
+- Feed age and gender filter
 
 <sub>Spotify, Kleinanzeigen, Untappd and InterPals patches share their extension code with [2eno Patches](https://github.com/2eno/2eno-patches), which are also available as a Morphe patch source.</sub>
 
