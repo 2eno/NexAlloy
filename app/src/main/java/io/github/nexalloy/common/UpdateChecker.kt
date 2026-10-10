@@ -54,8 +54,7 @@ data class VersionInfo(val versionCode: Int, val versionName: String) {
     }
 }
 
-const val OWNER = "NexAlloy"
-const val REPO = "NexAlloy"
+const val UPDATE_REPOSITORY = BuildConfig.UPDATE_REPOSITORY
 const val currentVersionCode = BuildConfig.VERSION_CODE
 
 class UpdateChecker() : CoroutineScope {
@@ -103,7 +102,7 @@ class UpdateChecker() : CoroutineScope {
         launch {
             try {
                 val response = Fuel.get(
-                    "https://api.github.com/repos/$OWNER/$REPO/releases/latest",
+                    "https://api.github.com/repos/$UPDATE_REPOSITORY/releases/latest",
                     headers = mapOf("Accept" to "application/vnd.github.html+json")
                 )
                 if (response.statusCode != 200) {
@@ -133,7 +132,7 @@ class UpdateChecker() : CoroutineScope {
     fun showRelease(version: String) {
         launch {
             val response = Fuel.get(
-                "https://api.github.com/repos/$OWNER/$REPO/releases/tags/$version",
+                "https://api.github.com/repos/$UPDATE_REPOSITORY/releases/tags/$version",
                 headers = mapOf("Accept" to "application/vnd.github.html+json")
             )
             if (response.statusCode != 200) {

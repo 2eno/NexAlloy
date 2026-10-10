@@ -6,3 +6,7 @@
 	path = morphe-patches-library
 	url = https://github.com/NexAlloy/morphe-patches-library
 	branch = nexalloy
+[submodule "2eno-patches"]
+	path = 2eno-patches
+	url = https://github.com/2eno/2eno-patches
+	branch = main

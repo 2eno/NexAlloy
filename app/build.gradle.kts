@@ -34,6 +34,9 @@ android {
         buildConfigField("String", "PATCH_VERSION", "\"$patchVersion\"")
         buildConfigField("String", "COMMIT_HASH", "\"${gitCommitHashProvider.get().trim()}\"")
         buildConfigField("long", "COMMIT_DATE", "${gitCommitDateProvider.get().trim()}L")
+        // GitHub repository checked for updates. Builds by GitHub Actions of a fork check the fork's releases.
+        val updateRepository = providers.environmentVariable("GITHUB_REPOSITORY").getOrElse("NexAlloy/NexAlloy")
+        buildConfigField("String", "UPDATE_REPOSITORY", "\"$updateRepository\"")
     }
     androidResources {
         additionalParameters += arrayOf("--allow-reserved-package-id", "--package-id", "0x4b")
@@ -96,7 +99,8 @@ android {
                 "../morphe-patches/extensions/youtube/src/main/java",
                 "../morphe-patches/extensions/music/src/main/java",
                 "../morphe-patches/extensions/reddit/src/main/java",
-                "../morphe-patches-library/extension-library/src/main/java"
+                "../morphe-patches-library/extension-library/src/main/java",
+                "../2eno-patches/extensions/twoeno/src/main/java",
             )
             java.directories += srcDirs
             kotlin.directories += srcDirs

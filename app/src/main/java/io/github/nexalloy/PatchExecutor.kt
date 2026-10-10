@@ -40,6 +40,7 @@ typealias FindClassFunc = DexKitBridge.() -> ClassData
 typealias FindMethodFunc = DexKitBridge.() -> MethodData
 typealias FindMethodListFunc = DexKitBridge.() -> List<MethodData>
 typealias FindFieldFunc = DexKitBridge.() -> FieldData
+typealias FindFieldListFunc = DexKitBridge.() -> List<FieldData>
 
 fun patch(
     name: String = "",
@@ -291,6 +292,9 @@ class PatchExecutor(
     val KProperty0<FindMethodListFunc>.dexMethodList
         get() = getDexMethods(this.name, this.get())
 
+    val KProperty0<FindFieldListFunc>.dexFieldList
+        get() = getDexFields(this.name, this.get())
+
     val KProperty0<FindFieldFunc>.dexField
         get() = getDexField(this.name, this.get())
 
@@ -381,6 +385,11 @@ class PatchExecutor(
     private inline fun getDexMethods(
         key: String, crossinline findFunc: DexKitBridge.() -> List<MethodData>
     ): List<DexMethod> = dexkit.getMethodsDirectOrEmpty(
+        key, wrapFindList(key, findFunc) { it.descriptor })
+
+    private inline fun getDexFields(
+        key: String, crossinline findFunc: DexKitBridge.() -> List<FieldData>
+    ): List<DexField> = dexkit.getFieldsDirectOrEmpty(
         key, wrapFindList(key, findFunc) { it.descriptor })
 }
 

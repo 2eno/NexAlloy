@@ -215,7 +215,15 @@ class FingerprintsKtTest(val apkPath: Path) {
             apkPath.name.startsWith("com.google.android.youtube") -> "youtube"
             apkPath.name.startsWith("com.google.android.apps.youtube.music") -> "music"
             apkPath.name.startsWith("com.reddit.frontpage") -> "reddit"
+            apkPath.name.startsWith("com.spotify.music") -> "spotify"
+            apkPath.name.startsWith("com.ebay.kleinanzeigen") -> "kleinanzeigen"
+            apkPath.name.startsWith("com.instagram.android") -> "instagram"
             else -> return@sequence
+        }
+        val patchesPackage = when (app) {
+            "spotify", "kleinanzeigen" -> "twoeno"
+            "instagram" -> "piko"
+            else -> "morphe"
         }
 
         fun findFingerprintPackages(rootPackage:String): MutableList<String> =
@@ -228,7 +236,7 @@ class FingerprintsKtTest(val apkPath: Path) {
                 }.toList().toMutableList()
 
         val packageNames =
-            findFingerprintPackages("src/main/java/io/github/nexalloy/morphe/$app")
+            findFingerprintPackages("src/main/java/io/github/nexalloy/$patchesPackage/$app")
 
         // Add shared fingerprints packages.
         if (app == "youtube"  || app == "music"){
