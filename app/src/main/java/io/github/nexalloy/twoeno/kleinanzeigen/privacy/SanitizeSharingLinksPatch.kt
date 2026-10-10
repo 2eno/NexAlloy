@@ -16,6 +16,13 @@ val SanitizeSharingLinks = patch(
     name = "Sanitize sharing links",
     description = "Removes the tracking parameters (utm_*) from shared listing and profile links.",
 ) {
+    // Newer versions are obfuscated.
+    ::sharingUrlBuilderMethods.dexMethodList.forEach {
+        it.hookMethod {
+            after { param -> (param.result as? String)?.let { url -> param.result = SanitizeSharingLinksPatch.sanitize(url) } }
+        }
+    }
+
     XposedHelpers.findClassIfExists(SOCIAL_SHARE_UTILS, classLoader)?.let { shareUtils ->
         // Returns the plain listing url instead of adding the tracking parameters.
         XposedBridge.hookAllMethods(shareUtils, "buildSharingUrl", object : XC_MethodReplacement() {
