@@ -99,6 +99,11 @@ class UpdateChecker() : CoroutineScope {
     }
 
     fun checkUpdate(silent: Boolean = true) {
+        if (UPDATE_REPOSITORY.isBlank()) {
+            Logger.printInfo { "Update check is disabled in local builds." }
+            if (!silent) Utils.showToastLong("Update check is disabled in local builds.")
+            return
+        }
         launch {
             try {
                 val response = Fuel.get(

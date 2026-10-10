@@ -17,7 +17,10 @@ val DisableAdPlacements = patch(
         "okhttp3.internal.http.RealInterceptorChain", classLoader, "proceed", "okhttp3.Request",
     ).hookMethod {
         before { it.args[0] = DisableAdPlacementsPatch.filterRequest(it.args[0]) }
-        after { it.result = DisableAdPlacementsPatch.filterResponse(it.result) }
+        after {
+            // Keep the exception of a failed request, setting a result would swallow it.
+            if (it.throwable == null) it.result = DisableAdPlacementsPatch.filterResponse(it.result)
+        }
     }
 
     // The defaults compiled into the JavaScript bundle: load a patched copy of the bundle.

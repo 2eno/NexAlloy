@@ -12,6 +12,9 @@ val HideSponsoredContent = patch(
     XposedHelpers.findMethodExact(
         "okhttp3.internal.http.RealInterceptorChain", classLoader, "proceed", "okhttp3.Request",
     ).hookMethod {
-        after { it.result = HideSponsoredContentPatch.filterResponse(it.result) }
+        after {
+            // Keep the exception of a failed request, setting a result would swallow it.
+            if (it.throwable == null) it.result = HideSponsoredContentPatch.filterResponse(it.result)
+        }
     }
 }

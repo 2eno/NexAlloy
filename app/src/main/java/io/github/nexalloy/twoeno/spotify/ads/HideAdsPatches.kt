@@ -80,7 +80,7 @@ val BlockPopupAds = patch(
 
     requests.forEach {
         it.hookMethod {
-            after { param -> param.result = BlockPopupAdsPatch.replaceRequest(param.result) }
+            after { param -> if (param.throwable == null) param.result = BlockPopupAdsPatch.replaceRequest(param.result) }
         }
     }
 }

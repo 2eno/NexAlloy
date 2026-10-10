@@ -34,8 +34,9 @@ android {
         buildConfigField("String", "PATCH_VERSION", "\"$patchVersion\"")
         buildConfigField("String", "COMMIT_HASH", "\"${gitCommitHashProvider.get().trim()}\"")
         buildConfigField("long", "COMMIT_DATE", "${gitCommitDateProvider.get().trim()}L")
-        // GitHub repository checked for updates. Builds by GitHub Actions of a fork check the fork's releases.
-        val updateRepository = providers.environmentVariable("GITHUB_REPOSITORY").getOrElse("NexAlloy/NexAlloy")
+        // GitHub repository checked for updates. Builds by GitHub Actions check the releases of their repository,
+        // local builds do not check for updates.
+        val updateRepository = providers.environmentVariable("GITHUB_REPOSITORY").getOrElse("")
         buildConfigField("String", "UPDATE_REPOSITORY", "\"$updateRepository\"")
     }
     androidResources {
