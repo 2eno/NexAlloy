@@ -7,6 +7,19 @@
   <br>
 </div>
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.** NexAlloy has been replaced by **[NexAlloyNext](https://github.com/2eno/NexAlloyNext)**, which is where all development, releases and support happen now.
+>
+> **Why NexAlloyNext is better:**
+> - **Plug-in patches:** patches ship as separate bundles from patch sources, like Morphe. You install only the apps you use, and a new patch or app doesn't need a new NexAlloy release.
+> - **Updates for both:** the app and every patch source check for updates in the background and notify you.
+> - **Clear app state:** each app shows its recommended version, whether it is in the module scope, and whether it's newer than the patches were tested with.
+> - **Own scope:** NexAlloyNext reports itself as active and requests only the apps whose bundles you installed.
+> - **Signed releases:** the app is signed with a release key and nightly builds are published from `main`.
+>
+> **Moving over:** install NexAlloyNext from its [releases](https://github.com/2eno/NexAlloyNext/releases/latest), enable it in your framework, and add the patch source `2eno/NexAlloyNext-Patches` in its Patches tab. This is a different package ID, so you can install it next to NexAlloy and move your settings by hand.
+
+
 **ChsBuffer's LSPosed module, powered by Morphe, ReVanced, and beyond.**  
 > [!CAUTION]
 > **Migration Notice:** This project has evolved from **ReVancedXposed** to **NexAlloy**. 
